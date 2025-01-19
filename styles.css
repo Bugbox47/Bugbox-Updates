@@ -1,0 +1,63 @@
+/* Hintergrund schwarz */
+body {
+    background-color: black;
+    color: white; /* Standardfarbe für Texte */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Überschrift Bugbox blau */
+h1 {
+    color: rgb(0, 255, 0);
+    font-size: 36px; /* Größe der Schrift */
+    text-align: center; /* Zentriert die Überschrift */
+}
+
+/* Styling für Update-Bereich */
+#update-section {
+    text-align: center;
+    margin: 20px 0; /* Abstand von oben/unten */
+}
+
+/* Bild als Button */
+#update-button img {
+    cursor: pointer; /* Zeigt eine Hand beim Hover */
+    border: none; /* Entfernt Rahmen */
+    transition: transform 0.2s ease; /* Animation beim Hover */
+}
+
+#update-button img:hover {
+    transform: scale(1.1); /* Vergrößert das Bild beim Hover */
+}
+
+/* Text "Update herunterladen" weiß */
+#update-section p {
+    color: white;
+    font-size: 18px; /* Schriftgröße */
+    text-align: center; /* Zentriert den Text */
+    margin-top: 10px; /* Abstand zum Bild */
+}
+
+/* Patch Notes Bereich */
+#patch-notes {
+    margin: 20px auto;
+    max-width: 500px; /* Maximale Breite */
+    padding: 10px;
+    background-color: #1e1e1e; /* Dunkler Hintergrund */
+    border-radius: 5px; /* Leicht abgerundete Ecken */
+}
+
+#patch-notes h2 {
+    color: lightblue; /* Überschriftfarbe für Patch Notes */
+    text-align: center;
+}
+
+#patch-notes ul {
+    list-style: none; /* Entfernt die Standardpunkte */
+    padding: 0;
+}
+
+#patch-notes li {
+    margin: 5px 0;
+}
