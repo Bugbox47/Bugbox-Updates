@@ -5,15 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bugbox</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333333;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        header nav a {
+            color: white;
+            margin-left: 20px;
+            text-decoration: none;
+        }
+        header nav a:hover {
+            text-decoration: underline;
+        }
+        #dark-light-toggle {
+            cursor: pointer;
+            border: none;
+            background: none;
+            color: white;
+            font-size: 16px;
+        }
+        #update-section {
+            margin-top: 100px;
+            text-align: center;
+        }
+        #update-button img {
+            transition: transform 0.3s;
+        }
+        #update-button.downloading img {
+            animation: rotate 1s linear infinite;
+        }
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Bugbox</h1>
+    <header>
+        <div id="logo">
+            <span>Bugbox</span>
+            <img src="bugbox.webp" alt="Bugbox Logo" id="bugbox-icon">
+        </div>
+        <nav>
+            <a href="https://www.instagram.com/bugbox_xobgub/profilecard/?igsh=c2czcTB5eGg0NjBx" target="_blank">Instagram</a>
+            <a href="https://x.com/Bugbox25?t=TNaJAAVgwJ2locnmRUvVWg&s=09" target="_blank">X</a>
+            <a href="mailto:slin.bugbox@gmail.com">Support</a>
+        </nav>
+        <button id="dark-light-toggle">🌙</button>
+    </header>
+    
     <div id="update-section">
         <a href="https://drive.google.com/uc?id=13GfJBV-aTpTl7JCA0SXFvfYeV7BgVFZO&export=download" id="update-button">
-            <img src="bugbox.webp" alt="Update herunterladen" style="width: 200px; height: auto;">
+            <img src="bugbox.webp" alt="App/Update herunterladen" style="width: 200px; height: auto;">
         </a>
-        <p>Update herunterladen</p>
+        <p id="update-text">App/Update herunterladen</p>
     </div>
+    
     <div id="patch-notes">
         <h2>Patch Notes & Bug Fixes</h2>
         <ul>
@@ -21,5 +89,34 @@
             <li>Version 1.0.2: Performance verbessert</li>
         </ul>
     </div>
+
+    <script>
+      // Dark-/Light-Modus Toggle
+const toggleButton = document.getElementById('dark-light-toggle');
+toggleButton.addEventListener('click', () => {
+    if (document.body.classList.contains('light-mode')) {
+        // Wechsel zu Dark Mode
+        document.body.classList.remove('light-mode');
+        document.body.style.backgroundColor = '#121212';
+        document.body.style.color = '#ffffff';
+        toggleButton.textContent = '🌙';
+    } else {
+        // Wechsel zu Light Mode
+        document.body.classList.add('light-mode');
+        document.body.style.backgroundColor = '#ffffff';
+        document.body.style.color = '#000000';
+        toggleButton.textContent = '☀';
+    }
+});
+
+
+        // Rotate Logo on Download
+        const updateButton = document.getElementById('update-button');
+        updateButton.addEventListener('click', (e) => {
+            updateButton.classList.add('downloading');
+            setTimeout(() => updateButton.classList.remove('downloading'), 3000); // Simulate download time
+        });
+    </script>
 </body>
 </html>
+

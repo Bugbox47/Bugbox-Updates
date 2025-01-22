@@ -1,63 +1,135 @@
-/* Hintergrund schwarz */
+/* Allgemeine Stile */
 body {
-    background-color: black;
-    color: white; /* Standardfarbe für Texte */
-    font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-/* Überschrift Bugbox blau */
-h1 {
-    color: rgb(0, 255, 0);
-    font-size: 36px; /* Größe der Schrift */
-    text-align: center; /* Zentriert die Überschrift */
-}
-
-/* Styling für Update-Bereich */
-#update-section {
-    text-align: center;
-    margin: 20px 0; /* Abstand von oben/unten */
-}
-
-/* Bild als Button */
-#update-button img {
-    cursor: pointer; /* Zeigt eine Hand beim Hover */
-    border: none; /* Entfernt Rahmen */
-    transition: transform 0.2s ease; /* Animation beim Hover */
-}
-
-#update-button img:hover {
-    transform: scale(1.1); /* Vergrößert das Bild beim Hover */
-}
-
-/* Text "Update herunterladen" weiß */
-#update-section p {
+#dark-light-toggle {
+    cursor: pointer;
+    border: none;
+    background: none;
     color: white;
-    font-size: 18px; /* Schriftgröße */
-    text-align: center; /* Zentriert den Text */
-    margin-top: 10px; /* Abstand zum Bild */
+    font-size: 20px;
+    position: relative;
+    margin-left: 20px;
+    padding: 5px 10px;
+    transition: color 0.3s;
 }
 
-/* Patch Notes Bereich */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+header nav {
+    flex-grow: 1;
+    text-align: right;
+}
+
+#dark-light-toggle:hover {
+    color: #f39c12;
+}
+
+
+/* Update-Bereich */
+#update-section {
+    margin-top: 100px;
+    text-align: center;
+}
+
+#update-button img {
+    width: 200px;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Animation für das rotierende Logo */
+#update-button.downloading img {
+    animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Patch Notes */
 #patch-notes {
     margin: 20px auto;
-    max-width: 500px; /* Maximale Breite */
-    padding: 10px;
-    background-color: #1e1e1e; /* Dunkler Hintergrund */
-    border-radius: 5px; /* Leicht abgerundete Ecken */
+    padding: 20px;
+    max-width: 600px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 #patch-notes h2 {
-    color: lightblue; /* Überschriftfarbe für Patch Notes */
     text-align: center;
+    margin-bottom: 10px;
+    color: #f39c12;
 }
 
 #patch-notes ul {
-    list-style: none; /* Entfernt die Standardpunkte */
+    list-style: none;
     padding: 0;
 }
 
 #patch-notes li {
-    margin: 5px 0;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #333333;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
 }
+
+/* Light Mode */
+body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body.light-mode header {
+    background-color: #f5f5f5;
+    color: #000000;
+}
+
+body.light-mode header nav a {
+    color: #000000;
+}
+
+body.light-mode #patch-notes {
+    background-color: #f9f9f9;
+    color: #333333;
+}
+
+body.light-mode #patch-notes li {
+    background-color: #e0e0e0;
+}
+#logo {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Abstand zwischen Text und Logo */
+}
+
+#logo span {
+    font-size: 24px; /* Größe des Texts */
+    font-weight: bold;
+    color: #00FF00; /* Knalliges Kirschgrün */
+}
+
+#bugbox-icon {
+    width: 30px; /* Größe des Logos */
+    height: 30px;
+    border-radius: 50%; /* Optional: Rundes Logo */
+}
+
