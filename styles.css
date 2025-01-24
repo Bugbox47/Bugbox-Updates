@@ -192,13 +192,23 @@ body.light-mode #patch-notes li {
 }
 
 
-/* Jungle Mode */
+/* Jungle-Modus für Desktop */
 body.jungle-mode {
-    background: url('jungle-background.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: #d4e157; /* Hellgrün für Texte */
+    background: url('./jungle.jpg') no-repeat center center fixed; /* Richtiger Pfad zum Bild */
+    background-size: cover; /* Skaliert, um den Bereich zu füllen */
+    color: #d4e157; /* Text in Hellgrün */
 }
 
+/* Mobile Ansicht */
+@media screen and (max-width: 768px) {
+    body.jungle-mode {
+        background: url('./jungle.jpg') no-repeat center center;
+        background-size: contain; /* Bild wird vollständig sichtbar */
+        background-attachment: scroll; /* Kein "fixiert", damit es mobil besser aussieht */
+    }
+}
+
+/* Dschungel-Stile */
 body.jungle-mode header {
     background-color: #1a472a; /* Dschungelgrün */
     color: #d4e157; /* Hellgrün */
