@@ -44,10 +44,18 @@ header nav {
 }
 
 #update-button img {
-    width: 200px;
-    height: auto;
-    transition: transform 0.3s ease-in-out;
+    border-radius: 10px; /* Dezente abgerundete Ecken */
+    width: 200px; /* Größe beibehalten */
+    height: auto; /* Proportional skalieren */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Leichter Schatten */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+#update-button img:hover {
+    transform: scale(1.05); /* Leichte Vergrößerung beim Hover */
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5); /* Schatten verstärken */
+}
+
 
 /* Animation für das rotierende Logo */
 #update-button.downloading img {
@@ -131,5 +139,61 @@ body.light-mode #patch-notes li {
     width: 30px; /* Größe des Logos */
     height: 30px;
     border-radius: 50%; /* Optional: Rundes Logo */
+}
+/* Social Media Icons */
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Runde Ecken */
+    margin: 0 10px; /* Symmetrischer Abstand */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Support-Link */
+#support-link {
+    margin-left: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #d4e157; /* Hellgrün */
+}
+
+#support-link:hover {
+    text-decoration: underline;
+}
+
+
+/* Jungle Mode */
+body.jungle-mode {
+    background: url('jungle-background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #d4e157; /* Hellgrün für Texte */
+}
+
+body.jungle-mode header {
+    background-color: #1a472a; /* Dschungelgrün */
+    color: #d4e157; /* Hellgrün */
+}
+
+body.jungle-mode header nav a {
+    color: #d4e157; /* Hellgrün */
+}
+
+body.jungle-mode #patch-notes {
+    background-color: #145214; /* Tiefgrün */
+    color: #d4e157; /* Hellgrün */
+}
+
+body.jungle-mode #patch-notes li {
+    background-color: #1f772a; /* Mittleres Grün */
+}
+
+body.jungle-mode #dark-light-toggle:hover {
+    color: #aeea00; /* Leuchtendes Grün */
 }
 
