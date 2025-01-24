@@ -27,10 +27,33 @@ header {
     box-sizing: border-box;
 }
 
+/* Allgemeine Header-Icons */
 header nav {
-    flex-grow: 1;
-    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Zentriert alle Icons und den Support-Link */
+    gap: 15px; /* Abstand zwischen den Elementen */
 }
+
+/* Mobile Ansicht - Anpassungen */
+@media screen and (max-width: 768px) {
+    .social-icon {
+        width: 30px; /* Kleinere Icons für mobile Ansicht */
+        height: 30px;
+        margin: 0 5px; /* Weniger Abstand zwischen den Icons */
+    }
+
+    #support-link {
+        font-size: 14px; /* Kleinere Schriftgröße für "Support" */
+        margin-left: 10px; /* Abstand etwas reduzieren */
+    }
+
+    header nav {
+        flex-wrap: wrap; /* Zeilenumbruch für kleinere Bildschirme */
+        gap: 10px; /* Weniger Abstand in mobiler Ansicht */
+    }
+}
+
 
 #dark-light-toggle:hover {
     color: #f39c12;
@@ -144,16 +167,17 @@ body.light-mode #patch-notes li {
 .social-icon {
     width: 40px;
     height: 40px;
-    border-radius: 50%; /* Runde Ecken */
+    border-radius: 10px; /* Abgerundete Ecken */
     margin: 0 10px; /* Symmetrischer Abstand */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Leichter Schatten */
 }
 
 .social-icon:hover {
-    transform: scale(1.1);
-    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.5);
+    transform: scale(1.1); /* Leichte Vergrößerung beim Hover */
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.5); /* Stärkerer Schatten */
 }
+
 
 /* Support-Link */
 #support-link {
